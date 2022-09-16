@@ -67,6 +67,41 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
+  gem 'rspec-rails'
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+#rspec
+gem 'rspec-core'
+
+#activerecord
+gem 'activerecord-postgresql-adapter'
+
+# Rubocop
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+# n+1
+gem 'bullet'
+
+#Cancan
+gem 'cancancan'
+
+# FFi
+gem 'ffi'
+
+# API
+gem 'jwt'
+
+#Rswag
+gem 'rswag'
+
+# Devise
+gem 'devise'
+
+#Sqlite3
+gem 'sqlite3'
+
+#Rails Controller Tesing
+gem 'rails-controller-testing'
+
