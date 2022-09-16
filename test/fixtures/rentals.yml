@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book_date: 2022-09-16
+  return_date: 2022-09-16
+  city: MyString
+
+two:
+  book_date: 2022-09-16
+  return_date: 2022-09-16
+  city: MyString
