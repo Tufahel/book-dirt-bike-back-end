@@ -8,10 +8,9 @@ class User < ApplicationRecord
 
   validates :username, presence: true
 
-  Roles = [ :admin , :default ]
+  ROLES = %i[admin default].freeze
 
-  def is?( requested_role )
-    self.role == requested_role.to_s
+  def is?(requested_role)
+    role == requested_role.to_s
   end
-
 end
