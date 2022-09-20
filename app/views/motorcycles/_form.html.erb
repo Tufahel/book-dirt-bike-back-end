@@ -1,0 +1,31 @@
+<%= form_with model: motorcycle, url: motorcycles_path  do |form| %>
+  <div class="d-flex flex-column justify-content-center align-items-center">
+      <div>
+         <%= form.label :bike_name %><br />
+         <%= form.text_field :bike_name, autofocus: true, autocomplete: "text" %>
+         <% motorcycle.errors.full_messages_for(:bike_name).each do |message| %>
+           <div><%= message %></div>
+         <% end %>
+      </div>
+
+      <div>
+          <%= form.label :details %><br />
+          <%= form.text_field :details, autofocus: true %>
+          <% motorcycle.errors.full_messages_for(:details).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+      </div>
+
+      <div>
+          <%= form.label :image %><br />
+          <%= form.text_field :image, autofocus: true %>
+          <% motorcycle.errors.full_messages_for(:image).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+      </div>
+
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary m-2">Reserve motorcycle</button>
+  </div>
+<% end %>

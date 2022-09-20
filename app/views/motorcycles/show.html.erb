@@ -1,0 +1,8 @@
+<p style="color: green"><%= notice %></p>
+<section>
+  <%= render "motorcycle", motorcycle: @motorcycle %>
+   <% if can? :destroy, @motorcycle %>
+  <%= button_to "Delete this motorcycle", motorcycle_path, method: :delete %>
+   <% end %>
+    <%= link_to "Back to motorcycle", motorcycles_path %>
+</section>
