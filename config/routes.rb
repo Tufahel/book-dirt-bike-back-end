@@ -5,11 +5,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "motorcycles#index"
-  # resources :motorcycles
-  namespace :api do
-    resources :users
-    resources :motorcycles, only: [:index, :create, :destroy]
-    resources :rentals, only: [:index, :create, :destroy]
-  end
+  resources :motorcycles
 
 end
