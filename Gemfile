@@ -101,6 +101,10 @@ gem 'rswag'
 # Devise
 gem 'devise'
 
+gem 'devise-jwt'
+
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Sqlite3
 gem 'sqlite3'
 
