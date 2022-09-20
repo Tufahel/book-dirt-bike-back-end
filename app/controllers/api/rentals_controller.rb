@@ -29,10 +29,10 @@ class Api::RentalsController < ApplicationController
     @rentals = @user.rentals
     render json: @rentals
   end
+
   private
 
   def rental_params
-    params.require(:rentals).permit(:book_date,:return_date, :city, :motorcycle_id, user_id: current_user.id)
-
+    params.require(:rentals).permit(:book_date, :return_date, :city, :motorcycle_id, user_id: current_user.id)
   end
 end
