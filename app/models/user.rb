@@ -6,8 +6,6 @@ class User < ApplicationRecord
   has_many :motorcycles, dependent: :destroy
   has_many :rentals, dependent: :destroy
 
-  validates :username, presence: true
-
   ROLES = %i[admin default].freeze
 
   def is?(requested_role)
