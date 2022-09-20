@@ -5,21 +5,34 @@ class Api::RentalsController < ApplicationController
   end
 
   def show
-    @rental = Rental.find(params[:id])
-    render json: @rental
+    @rentals = current_user.rentals
+    render json: { rentals: @rentals }.to_json
   end
 
-  def create; end
+  def create
+    @rental = current_user.rentals.new(rental_params)
+    if @rental.save
+      render json: @rental, status: :created, location: @rental
+    else
+      render json: @rental.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @rental = rental.find(params[:id])
+    @rental.destroy
+    render json: @rental
+  end
 
   def new
     @user = current_user.id
     @rentals = @user.rentals
     render json: @rentals
   end
+  private
 
-  def destroy; end
+  def rental_params
+    params.require(:rentals).permit(:book_date,:return_date, :city, :motorcycle_id, user_id: current_user.id)
 
-  def params
-    params.require(:rentals).permit(:user_id, :motorcycle_id, :book_date, :return_date, :city)
   end
 end
