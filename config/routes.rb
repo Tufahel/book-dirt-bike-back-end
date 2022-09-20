@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     resources :users
+    resources :motorcycles, only: [:index, :create, :destroy]
+    resources :rentals, only: [:index, :create, :destroy]
   end
 end
