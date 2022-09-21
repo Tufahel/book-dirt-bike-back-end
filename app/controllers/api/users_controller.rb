@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  #before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def show
     user = user_from_token
@@ -17,7 +17,6 @@ class Api::UsersController < ApplicationController
   #     render json: user.errors.full_messages, status: 422
   #   end
   # end
-
 
   def index
     users = User.all
@@ -39,5 +38,4 @@ class Api::UsersController < ApplicationController
   # def user_params
   #   params.require(:user).permit(:username, :email, :full_name, :encrypted_password, :date_of_birth)
   # end
-
 end
