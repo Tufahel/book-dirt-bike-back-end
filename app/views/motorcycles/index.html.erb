@@ -1,0 +1,33 @@
+
+<section class="m-4">
+  <div>
+  <% if can? :create, @motorcycles.first %>
+   <%= button_to "Add Bike", new_motorcycle_path, method: :get, class:"btn btn-primary float-end m-2" %>
+   <% end %>
+  </div>
+  <% if @motorcycles.exists? %>
+  <table class="table border">
+    <thead>
+      <tr>
+       <th>Motorcycle</th>
+       <th>Details</th>
+       <th>Image</th>
+      </tr>
+    </thead>
+    
+      <% @motorcycles.each do |motorcycle| %>
+      <tbody>
+        <td><%= link_to motorcycle.bike_name ,motorcycle_path(motorcycle.id) %></td>
+          <td><%= motorcycle.details %></td>
+          <td><%= motorcycle.image %></td>
+          <% if can? :destroy, motorcycle %>
+            <td><%= button_to "Delete", motorcycle_path(motorcycle.id), method: :delete, class:"btn btn-danger" %></td>
+          <% end %>
+             </tbody>
+      <% end %>
+ 
+  </table>
+   <% else %>
+          <p>No motorcycle reserved yet</p> 
+   <% end %>
+</section>

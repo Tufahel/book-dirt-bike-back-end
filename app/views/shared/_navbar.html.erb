@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to "Bike reserve App", root_path, class:"navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <% if !user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Sign In", new_user_session_path , class:"btn btn-success"%>
+          </li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+          <%= link_to "motorcycles", motorcycles_path, class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-danger"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to "#{current_user.username}", root_path, class:"navbar-brand"%>
+          </li>
+        <% end %>  
+      </div>
+    </div>
+  </div>
+</nav>
