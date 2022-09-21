@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
   namespace :api, defaults: { format: 'json' } do
     get '/user-data', to: 'users#show'
+    resources :users
     resources :motorcycles, only: [:index, :show, :create, :new, :destroy]
     resources :rentals
   end

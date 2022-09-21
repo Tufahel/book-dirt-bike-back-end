@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def show
     user = user_from_token
@@ -7,6 +7,11 @@ class Api::UsersController < ApplicationController
       message: 'You are in !',
       user:
     }
+  end
+
+  def index
+    users = User.all
+    render json: users
   end
 
   private

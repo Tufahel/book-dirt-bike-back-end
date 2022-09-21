@@ -1,12 +1,12 @@
 class Api::RentalsController < ApplicationController
   include Response
   def index
-    @rentals = current_user.rentals
+    @rentals = Rental.all
     render json: { rentals: @rentals }.to_json
   end
 
   def create
-    @rental = current_user.rentals.new(rental_params)
+    @rental = Rental.new(rental_params)
     if @rental.save
       json_response(@rental, :created)
     else
@@ -31,6 +31,6 @@ class Api::RentalsController < ApplicationController
   end
 
   def rental_params
-    params.require(:rentals).permit(:book_date, :return_date, :city, :motorcycle_id, user_id: current_user.id)
+    params.require(:rental).permit(:book_date, :return_date, :city, :motorcycle_id, :user_id)
   end
 end

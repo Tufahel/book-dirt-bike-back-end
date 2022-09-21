@@ -1,7 +1,7 @@
 class Api::MotorcyclesController < ApplicationController
   include Response
   def index
-    @motorcycles = current_user.motorcycles.all
+    @motorcycles = Motorcycle.all
     render json: @motorcycles
   end
 
