@@ -101,6 +101,8 @@ gem 'rswag'
 # Devise
 gem 'devise'
 
+gem 'devise-jwt'
+
 # Sqlite3
 gem 'sqlite3'
 

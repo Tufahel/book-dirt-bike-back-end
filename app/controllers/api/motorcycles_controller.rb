@@ -1,6 +1,6 @@
 class Api::MotorcyclesController < ApplicationController
   def index
-    @motorcycles = Motorcycle.all
+    @motorcycles = current_user.motorcycles.all
     render json: @motorcycles
   end
 
@@ -16,8 +16,7 @@ class Api::MotorcyclesController < ApplicationController
   end
 
   def create
-    @motorcycle = Motorcycle.new(motorcycle_params)
-    @motorcycle.user_id = current_user.id
+    @motorcycle = current_user.motorcycles.new(motorcycle_params)
     if @motorcycle.save
       render json: @motorcycle
     else
@@ -34,6 +33,6 @@ class Api::MotorcyclesController < ApplicationController
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:bike_name, :details, :image, :user_id)
+    params.require(:motorcycle).permit(:bike_name, :details, :image, :user_id: current_user.id)
   end
 end
