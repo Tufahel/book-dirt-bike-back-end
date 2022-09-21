@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
   namespace :api, defaults: { format: 'json' } do
     get '/user-data', to: 'users#show'
+    resources :motorcycles, only: [:index, :show, :create, :new, :destroy]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
