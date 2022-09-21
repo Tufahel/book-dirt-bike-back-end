@@ -1,5 +1,4 @@
 class MotorcyclesController < ApplicationController
-
   def index
     @motorcycles = current_user.motorcycles.all
   end
