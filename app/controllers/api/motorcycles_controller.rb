@@ -17,7 +17,7 @@ class Api::MotorcyclesController < ApplicationController
   end
 
   def create
-    @motorcycle = current_user.motorcycles.new(motorcycle_params)
+    @motorcycle = Motorcycle.new(motorcycle_params)
     if @motorcycle.save
       render json: @motorcycle
     else
@@ -34,6 +34,6 @@ class Api::MotorcyclesController < ApplicationController
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:bike_name, :details, :amount, :image, user_id: current_user.id)
+    params.require(:motorcycle).permit(:bike_name, :details, :amount, :image, :user_id)
   end
 end
