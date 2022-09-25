@@ -103,6 +103,8 @@ gem 'devise'
 
 gem 'devise-jwt'
 
+gem 'warden-jwt_auth'
+
 # Sqlite3
 gem 'sqlite3'
 
