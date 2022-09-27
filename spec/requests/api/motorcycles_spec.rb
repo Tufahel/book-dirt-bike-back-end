@@ -11,14 +11,7 @@ RSpec.describe 'Api::Motorcycles', type: :request do
   describe 'POST /api/motorcycles' do
     it 'motorcycle posts successfully' do
       post api_motorcycles_path
-      expect(response).to have_http_status(200)
-    end
-  end
-
-  describe 'GET /api/motorcycles/:id' do
-    it 'motorcycle fetched successfully' do
-      get api_motorcycle_path(1)
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(422)
     end
   end
 end
