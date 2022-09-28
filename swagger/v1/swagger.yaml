@@ -12,15 +12,32 @@ paths:
           description: successful
     post:
       summary: create motorcycle
+      parameters: []
       responses:
         '200':
           description: successful
-  "/api/motorcycles/new":
-    get:
-      summary: new motorcycle
-      responses:
-        '200':
-          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bike_name:
+                  type: string
+                details:
+                  type: string
+                amount:
+                  type: number
+                image:
+                  type: file
+                user_id:
+                  type: integer
+              required:
+              - bike_name
+              - details
+              - amount
+              - image
+              - user_id
   "/api/motorcycles/{id}":
     parameters:
     - name: id
@@ -47,15 +64,34 @@ paths:
           description: successful
     post:
       summary: create rental
+      parameters: []
       responses:
         '200':
           description: successful
-  "/api/rentals/new":
-    get:
-      summary: new rental
-      responses:
-        '200':
-          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book_date:
+                  type: string
+                return_date:
+                  type: string
+                city:
+                  type: string
+                motorcycle_id:
+                  type: string
+                  default: 1
+                user_id:
+                  type: string
+                  default: 1
+              required:
+              - book_date
+              - return_date
+              - city
+              - user_id,
+              - motorcycle_id
   "/api/rentals/{id}":
     parameters:
     - name: id
@@ -64,21 +100,6 @@ paths:
       required: true
       schema:
         type: string
-    get:
-      summary: show rental
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update rental
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update rental
-      responses:
-        '200':
-          description: successful
     delete:
       summary: delete rental
       responses:
@@ -87,17 +108,6 @@ paths:
   "/api/user-data":
     get:
       summary: show user
-      responses:
-        '200':
-          description: successful
-  "/api/users":
-    get:
-      summary: list users
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create user
       responses:
         '200':
           description: successful

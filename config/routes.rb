@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get '/user-data', to: 'users#show'
     resources :users
     resources :motorcycles, only: [:index, :show, :create, :new, :destroy]
-    resources :rentals
+    resources :rentals, only: [:index, :show, :create, :new, :destroy]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
