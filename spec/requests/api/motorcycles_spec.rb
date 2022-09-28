@@ -1,17 +1,87 @@
-require 'rails_helper'
+require 'swagger_helper'
 
-RSpec.describe 'Api::Motorcycles', type: :request do
-  describe 'GET /api/motorcycles' do
-    it 'motorcycle fetched successfully' do
-      get api_motorcycles_path
-      expect(response).to have_http_status(200)
+RSpec.describe 'api/motorcycles', type: :request do
+
+  path '/api/motorcycles' do
+
+    get('list motorcycles') do
+      response(200, 'successful') do
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
+    end
+
+    post('create motorcycle') do
+      response(200, 'successful') do
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
     end
   end
 
-  describe 'POST /api/motorcycles' do
-    it 'motorcycle posts successfully' do
-      post api_motorcycles_path
-      expect(response).to have_http_status(422)
+  path '/api/motorcycles/new' do
+
+    get('new motorcycle') do
+      response(200, 'successful') do
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
+    end
+  end
+
+  path '/api/motorcycles/{id}' do
+    # You'll want to customize the parameter types...
+    parameter name: 'id', in: :path, type: :string, description: 'id'
+
+    get('show motorcycle') do
+      response(200, 'successful') do
+        let(:id) { '123' }
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
+    end
+
+    delete('delete motorcycle') do
+      response(200, 'successful') do
+        let(:id) { '123' }
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
     end
   end
 end
