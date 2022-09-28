@@ -1,16 +1,10 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/my', type: :request do
-end
-# spec/requests/blogs_spec.rb
-require 'swagger_helper'
+  path 'api/users' do
 
-describe 'Blogs API' do
-
-  path '/blogs' do
-
-    post 'Creates a blog' do
-      tags 'Blogs'
+    post 'Creates a user' do
+      tags 'Users'
       consumes 'application/json'
       parameter name: :blog, in: :body, schema: {
         type: :object,
