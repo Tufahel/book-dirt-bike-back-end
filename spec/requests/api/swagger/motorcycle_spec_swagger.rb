@@ -32,7 +32,7 @@ RSpec.describe '/motorcycle', type: :request do
       }
       response(201, 'Motorcycle got saved successfully') do
         let(:Authorization) { "Bearer #{@user.generate_jwt}" }
-        let(:mentor) { { bike_name: 'Honda', details: 'Decent bike', image: 'https://www.something.com/photo.png' amount: 50} }
+        let(:mentor) { { bike_name: 'Honda', details: 'Decent bike', image: 'https://www.something.com/photo.png', amount: 50 } }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -45,7 +45,7 @@ RSpec.describe '/motorcycle', type: :request do
 
       response(422, "Motorcycle couldn't be saved") do
         let(:Authorization) { "Bearer #{@user.generate_jwt}" }
-        let(:mentor) { { bike_name: 'Kawasaki', details: 'Some bike', image: 'photo' amount: 20} }
+        let(:mentor) { { bike_name: 'Kawasaki', details: 'Some bike', image: 'photo', amount: 20 } }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {

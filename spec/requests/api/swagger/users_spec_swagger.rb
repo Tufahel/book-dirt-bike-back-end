@@ -54,7 +54,7 @@ RSpec.describe 'users', type: :request do
         required: %w[email password]
       }
       response(200, 'successful') do
-        let(:users) { { username: 'John43', name: 'Toyosi' email: 'johntoyo@nomail.com', password: '123123' } }
+        let(:users) { { username: 'John43', name: 'Toyosi', email: 'johntoyo@nomail.com', password: '123123' } }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
