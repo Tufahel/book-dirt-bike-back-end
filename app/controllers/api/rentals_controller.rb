@@ -5,6 +5,11 @@ class Api::RentalsController < ApplicationController
     render json: { rentals: @rentals }.to_json
   end
 
+  def show
+    @rental = Rental.find(params[:id])
+    render json: @rental
+  end
+
   def create
     @rental = Rental.new(rental_params)
     if @rental.save
@@ -15,13 +20,9 @@ class Api::RentalsController < ApplicationController
   end
 
   def destroy
-    @bike = current_motorcycle
-    if @bike.nil?
-      json_response({ error: 'Bike doesn\'t exist' }, :no_content)
-    else
-      @bike.destroy
-      json_response({ message: 'Bike deleted successfully' }, :no_content)
-    end
+    @rental = Rental.find(params[:id])
+    @rental.destroy
+    render json: @rental
   end
 
   private
