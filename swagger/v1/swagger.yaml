@@ -28,10 +28,12 @@ paths:
                   type: string
                 amount:
                   type: number
+                  default: 30
                 image:
-                  type: file
+                  type: string
                 user_id:
                   type: integer
+                  default: 1
               required:
               - bike_name
               - details
@@ -90,7 +92,7 @@ paths:
               - book_date
               - return_date
               - city
-              - user_id,
+              - user_id
               - motorcycle_id
   "/api/rentals/{id}":
     parameters:
@@ -108,6 +110,65 @@ paths:
   "/api/user-data":
     get:
       summary: show user
+      responses:
+        '200':
+          description: successful
+  "/users":
+    post:
+      summary: create registration
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    username:
+                      type: string
+                      required: true
+                    email:
+                      type: string
+                      required: true
+                    password:
+                      type: string
+                      required: true
+                    confirm_password:
+                      type: string
+                      required: true
+                    date_of_birth:
+                      type: string
+                      required: true
+  "/users/sign_in":
+    post:
+      summary: create session
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    username:
+                      type: string
+                      required: true
+                    password:
+                      type: string
+                      required: true
+  "/users/sign_out":
+    delete:
+      summary: destroy session
       responses:
         '200':
           description: successful
