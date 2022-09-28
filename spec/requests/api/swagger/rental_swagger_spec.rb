@@ -1,7 +1,7 @@
 require 'swagger_helper'
 
-RSpec.describe '/rental', type: :request do
-  path '/rental' do
+RSpec.describe '/rentals', type: :request do
+  path '/rentals' do
     get('list rentals') do
       tags 'Rentals'
       security [bearerAuth: {}]
@@ -37,7 +37,7 @@ RSpec.describe '/rental', type: :request do
         type: :object,
         properties: {
           motorcycle_id: { type: :integer },
-          city: { type: :string }
+          city: { type: :string },
           book_date: { type: :date },
           return_date: { type: :date }
         },
