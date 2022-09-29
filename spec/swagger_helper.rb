@@ -15,7 +15,7 @@ RSpec.configure do |config|
           url: 'https://{defaultHost}',
           variables: {
             defaultHost: {
-              default: 'https://calm-brushlands-14039.herokuapp.com/'
+              default: 'calm-brushlands-14039.herokuapp.com/'
             }
           }
         }
