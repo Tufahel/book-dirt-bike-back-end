@@ -3,4 +3,9 @@ class Api::UsersController < ApplicationController
     users = User.all
     render json: users
   end
+
+  def show
+    users = User.all
+    render json: users
+  end
 end
