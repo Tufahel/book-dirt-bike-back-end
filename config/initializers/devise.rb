@@ -21,7 +21,7 @@ Devise.setup do |config|
   # config.parent_controller = 'DeviseController'
 
   config.jwt do |jwt|
-    jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']  # Add this line in your production environment
+    jwt.secret = Rails.application.secret_key_base  # Add this line in your production environment
     # jwt.secret = Rails.application.credentials.devise[:jwt_secret_key] # Add this line in your development env
     jwt.dispatch_requests = [
       ['POST', %r{^users/sign_in$}]
