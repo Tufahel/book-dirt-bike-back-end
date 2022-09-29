@@ -19,6 +19,9 @@
 - Device
 
 
+**Live**
+
+- Live app: [Dirt-Bike](https://incredible-unicorn-5f0c7d.netlify.app/)
 
 ## Front-end repo
 [Frontend repo](https://github.com/Tufahel/book-dirt-bike-front-end)
@@ -34,7 +37,7 @@ To get a local copy up and running follow these setup steps.
 
 **Setup**
 
-- Open terminal and clone the project: `git clone git@github.com:Tufahel/book-dirt-bike-front-end.git`
+- Open terminal and clone the project: `git clone git@github.com:Tufahel/book-dirt-bike-back-end.git`
 - cd into the directory `book-dirt-bike-back-end`
 
 **Prerequisites**
@@ -49,7 +52,7 @@ To get a local copy up and running follow these setup steps.
 - Run `rails db:migrate` to migrate the database
 - Run `rails db:seed` to seed the database
 - Run `rails s` to start the server
-- Open `http://localhost:3001/` in your browser
+- Open `http://localhost:3000/` in your browser
 - In case you run into any errors please raise an [issue](https://github.com/Tufahel/book-dirt-bike-back-end/issues).
 
 ### Run tests
