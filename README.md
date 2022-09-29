@@ -8,6 +8,29 @@
 
 ![image](/app/assets/images/WhatsApp%20Image%202022-09-29%20at%2014.17.39.jpeg)
 
+## Backend Server
+[Backend](https://calm-brushlands-14039.herokuapp.com/api-docs/index.html)
+
+## Backend Source Code
+[Backend Source Code](https://github.com/Tufahel/book-dirt-bike-back-end)
+
+## Frontend Live Version
+[Live Page]((https://incredible-unicorn-5f0c7d.netlify.app/))
+
+## Frontend Source Code
+[Frontend Source Code](https://github.com/Tufahel/book-dirt-bike-front-end)
+
+## Kanban Board
+[Kanban Board](https://github.com/Tufahel/book-dirt-bike-back-end/projects/1)
+
+## Initial State Of Kanban Board
+[Initial State](https://github.com/Tufahel/book-dirt-bike-back-end/issues/12)
+
+## Final Number Of Team Members
+> We are 3 members in our team:
+  - [Toyosi Taiwo](https://github.com/Yorsyboy)
+  - [Tufahel Ahmed](https://github.com/Tufahel)
+  - [Nii Amanor Djoleto](https://github.com/ramrod433)
 
 ## Built With
 
