@@ -15,7 +15,7 @@
 [Backend Source Code](https://github.com/Tufahel/book-dirt-bike-back-end)
 
 ## Frontend Live Version
-[Live Page]((https://incredible-unicorn-5f0c7d.netlify.app/))
+[Live Page](https://incredible-unicorn-5f0c7d.netlify.app/)
 
 ## Frontend Source Code
 [Frontend Source Code](https://github.com/Tufahel/book-dirt-bike-front-end)
