@@ -6,7 +6,7 @@
   Demo 📝
 </h2>
 
-![image](/app/assets/images/WhatsApp%20Image%202022-09-29%20at%2014.17.39.jpeg)
+![image](/app/assets/images/dirt_bike_book.png)
 
 ## Backend Server
 [Backend](https://calm-brushlands-14039.herokuapp.com/api-docs/index.html)
